@@ -1,0 +1,501 @@
+Date,Category,Amount
+2023-06-02,Utilities,736
+2023-06-02,Movies,355
+2023-06-04,Dining Out,407
+2023-06-04,Restaurants,412
+2023-06-05,Food Delivery,362
+2023-06-06,Music,606
+2023-06-09,Rent,769
+2023-06-10,TV,289
+2023-06-10,Music,548
+2023-06-10,Mortgage,757
+2023-06-10,Phone,780
+2023-06-11,Entertainment,189
+2023-06-12,Beverages,980
+2023-06-12,Phone,601
+2023-06-13,Gas,933
+2023-06-15,Hobbies,513
+2023-06-16,Gas,774
+2023-06-16,HOA Fees,825
+2023-06-18,Beverages,942
+2023-06-18,Mortgage,851
+2023-06-18,Internet,206
+2023-06-18,TV,929
+2023-06-19,Transportation,761
+2023-06-20,Home Insurance,886
+2023-06-21,Travel,472
+2023-06-22,Electricity,422
+2023-06-23,Entertainment,639
+2023-06-23,Electricity,222
+2023-06-24,Property Taxes,355
+2023-06-25,Gas,451
+2023-06-26,Household Supplies,162
+2023-06-26,Food Delivery,939
+2023-06-26,Travel,221
+2023-06-26,Phone,359
+2023-06-26,Dining Out,909
+2023-06-27,Property Taxes,220
+2023-06-28,Music,262
+2023-06-29,Entertainment,899
+2023-06-30,Gas,305
+2023-06-30,Rent,886
+2023-07-03,Rent,486
+2023-07-04,Cafes,120
+2023-07-05,Car Payments,198
+2023-07-05,HOA Fees,953
+2023-07-05,Entertainment,727
+2023-07-07,Hobbies,509
+2023-07-08,Hobbies,921
+2023-07-09,Public Transportation,423
+2023-07-10,Mortgage,541
+2023-07-10,Gas,858
+2023-07-10,Mortgage,968
+2023-07-11,HOA Fees,372
+2023-07-11,Cafes,594
+2023-07-11,Car Payments,388
+2023-07-11,Maintenance,540
+2023-07-12,Groceries,691
+2023-07-14,Cafes,450
+2023-07-15,Dining Out,237
+2023-07-15,Gas,469
+2023-07-15,Restaurants,678
+2023-07-15,Other,978
+2023-07-16,Water,225
+2023-07-16,Transportation,989
+2023-07-18,Music,773
+2023-07-20,Rent,699
+2023-07-20,Maintenance,683
+2023-07-20,Water,984
+2023-07-21,Groceries,432
+2023-07-22,Utilities,407
+2023-07-22,Beverages,303
+2023-07-22,Mortgage,796
+2023-07-24,Electricity,361
+2023-07-24,Groceries,356
+2023-07-25,Electricity,680
+2023-07-26,Transportation,820
+2023-07-26,HOA Fees,385
+2023-07-26,Groceries,424
+2023-07-26,Other,417
+2023-07-26,Home Insurance,751
+2023-07-26,Other,208
+2023-07-27,Parking,161
+2023-07-28,Food,407
+2023-07-28,Rent,614
+2023-07-29,Household Supplies,659
+2023-07-31,TV,630
+2023-07-31,Phone,908
+2023-08-01,Gas,857
+2023-08-01,Water,172
+2023-08-02,Hobbies,105
+2023-08-03,HOA Fees,922
+2023-08-04,Property Taxes,320
+2023-08-04,Household Supplies,359
+2023-08-07,Rent,393
+2023-08-08,Car Payments,800
+2023-08-08,Gas,676
+2023-08-09,Electricity,194
+2023-08-11,Music,305
+2023-08-13,Travel,496
+2023-08-13,Gas,192
+2023-08-14,Dining Out,408
+2023-08-16,Hobbies,521
+2023-08-18,Phone,823
+2023-08-18,Hobbies,491
+2023-08-19,Restaurants,948
+2023-08-21,Entertainment,869
+2023-08-21,TV,845
+2023-08-21,Household Supplies,311
+2023-08-22,Maintenance,228
+2023-08-23,Car Payments,710
+2023-08-23,Water,998
+2023-08-26,Phone,376
+2023-08-27,Property Taxes,976
+2023-08-28,Phone,434
+2023-08-28,Entertainment,614
+2023-08-29,Public Transportation,726
+2023-08-29,Movies,868
+2023-08-29,Movies,794
+2023-08-30,Restaurants,218
+2023-08-30,Rent,768
+2023-08-30,Gas,295
+2023-08-31,Water,459
+2023-08-31,Water,431
+2023-09-01,Rent,707
+2023-09-02,Rent,490
+2023-09-03,Internet,980
+2023-09-04,HOA Fees,383
+2023-09-04,Mortgage,592
+2023-09-06,Other,824
+2023-09-06,Music,222
+2023-09-06,TV,703
+2023-09-06,TV,152
+2023-09-07,Hobbies,624
+2023-09-09,Restaurants,859
+2023-09-09,TV,598
+2023-09-11,Transportation,831
+2023-09-13,Rent,284
+2023-09-16,Home Insurance,720
+2023-09-17,Mortgage,848
+2023-09-19,Parking,354
+2023-09-19,Home Insurance,685
+2023-09-20,Property Taxes,801
+2023-09-20,Books,681
+2023-09-20,HOA Fees,874
+2023-09-21,Dining Out,415
+2023-09-23,Hobbies,659
+2023-09-24,Phone,673
+2023-09-24,Books,264
+2023-09-24,Mortgage,281
+2023-09-26,Rent,472
+2023-09-26,Hobbies,445
+2023-09-27,Internet,583
+2023-09-27,Travel,413
+2023-09-27,Hobbies,940
+2023-09-27,Car Payments,386
+2023-09-28,Music,560
+2023-09-28,Books,396
+2023-09-29,Restaurants,530
+2023-09-30,Utilities,759
+2023-10-01,Books,657
+2023-10-01,Utilities,704
+2023-10-05,Food Delivery,291
+2023-10-05,Utilities,446
+2023-10-06,Parking,261
+2023-10-06,Water,531
+2023-10-07,Utilities,930
+2023-10-07,Internet,799
+2023-10-08,Parking,723
+2023-10-08,Gas,362
+2023-10-09,Movies,886
+2023-10-09,Phone,549
+2023-10-09,HOA Fees,343
+2023-10-09,Hobbies,370
+2023-10-11,Rent,749
+2023-10-13,Electricity,492
+2023-10-14,TV,915
+2023-10-16,Restaurants,316
+2023-10-18,Cafes,706
+2023-10-18,Electricity,746
+2023-10-18,Public Transportation,576
+2023-10-19,Car Payments,703
+2023-10-20,Gas,554
+2023-10-20,Utilities,199
+2023-10-20,Parking,511
+2023-10-21,Travel,504
+2023-10-21,Utilities,106
+2023-10-23,TV,312
+2023-10-24,Food,419
+2023-10-24,Home Insurance,856
+2023-10-25,Parking,818
+2023-10-25,Cafes,662
+2023-10-25,Groceries,949
+2023-10-25,Food Delivery,812
+2023-10-25,Food Delivery,305
+2023-10-25,Food,659
+2023-10-26,Food,545
+2023-10-26,Internet,867
+2023-10-29,Other,183
+2023-10-30,Parking,650
+2023-10-30,TV,612
+2023-10-31,Home Insurance,877
+2023-10-31,Home Insurance,184
+2023-10-31,Beverages,787
+2023-11-01,Books,521
+2023-11-02,TV,500
+2023-11-02,Property Taxes,807
+2023-11-02,Household Supplies,627
+2023-11-03,Gas,736
+2023-11-03,HOA Fees,478
+2023-11-04,Rent,592
+2023-11-04,Phone,817
+2023-11-06,Travel,390
+2023-11-06,Food,375
+2023-11-08,Books,103
+2023-11-09,Mortgage,860
+2023-11-09,Books,364
+2023-11-09,Groceries,875
+2023-11-10,Dining Out,441
+2023-11-11,TV,839
+2023-11-11,Groceries,337
+2023-11-12,Gas,350
+2023-11-12,Electricity,352
+2023-11-13,Food,788
+2023-11-14,Gas,713
+2023-11-14,Cafes,668
+2023-11-14,Water,449
+2023-11-14,Movies,685
+2023-11-17,Movies,340
+2023-11-17,Gas,224
+2023-11-17,Movies,914
+2023-11-17,Parking,115
+2023-11-17,Food Delivery,882
+2023-11-18,Movies,205
+2023-11-18,Transportation,480
+2023-11-19,Internet,370
+2023-11-19,Car Payments,421
+2023-11-22,Cafes,951
+2023-11-23,Rent,448
+2023-11-24,HOA Fees,318
+2023-11-25,Rent,225
+2023-11-25,Mortgage,760
+2023-11-25,Parking,878
+2023-11-26,Cafes,894
+2023-11-27,Travel,542
+2023-11-27,Food,357
+2023-11-28,Utilities,417
+2023-11-28,Transportation,146
+2023-11-28,Utilities,301
+2023-11-29,Transportation,316
+2023-11-29,Property Taxes,626
+2023-11-29,Beverages,191
+2023-11-29,Household Supplies,352
+2023-11-29,Water,271
+2023-11-30,Utilities,847
+2023-11-30,Household Supplies,223
+2023-11-30,Public Transportation,561
+2023-12-02,HOA Fees,312
+2023-12-02,Water,468
+2023-12-02,Groceries,758
+2023-12-02,Utilities,859
+2023-12-02,Restaurants,124
+2023-12-03,Rent,124
+2023-12-03,Books,889
+2023-12-03,Parking,684
+2023-12-04,Hobbies,334
+2023-12-04,Beverages,759
+2023-12-05,Home Insurance,263
+2023-12-05,Transportation,310
+2023-12-06,Dining Out,845
+2023-12-08,Property Taxes,439
+2023-12-08,Phone,966
+2023-12-08,TV,404
+2023-12-08,Rent,678
+2023-12-08,Music,359
+2023-12-11,Other,798
+2023-12-12,Gas,355
+2023-12-13,Rent,190
+2023-12-14,HOA Fees,607
+2023-12-14,Rent,767
+2023-12-15,Internet,355
+2023-12-15,Cafes,156
+2023-12-19,Home Insurance,532
+2023-12-20,Parking,422
+2023-12-20,Rent,372
+2023-12-20,Home Insurance,306
+2023-12-21,Other,344
+2023-12-21,Movies,981
+2023-12-21,Restaurants,987
+2023-12-23,Public Transportation,734
+2023-12-24,Groceries,228
+2023-12-24,Cafes,754
+2023-12-24,Water,317
+2023-12-25,Mortgage,277
+2023-12-26,Cafes,742
+2023-12-27,Transportation,838
+2023-12-30,Transportation,796
+2023-12-31,Movies,435
+2024-01-01,Restaurants,503
+2024-01-02,Household Supplies,782
+2024-01-02,Dining Out,776
+2024-01-04,Entertainment,528
+2024-01-04,Rent,184
+2024-01-06,Restaurants,645
+2024-01-06,Maintenance,400
+2024-01-07,Entertainment,965
+2024-01-07,Mortgage,518
+2024-01-07,Public Transportation,243
+2024-01-08,TV,171
+2024-01-08,Books,625
+2024-01-08,Rent,816
+2024-01-09,Dining Out,677
+2024-01-13,Mortgage,915
+2024-01-13,Maintenance,443
+2024-01-14,Restaurants,991
+2024-01-15,Maintenance,727
+2024-01-15,Food Delivery,338
+2024-01-16,Mortgage,681
+2024-01-20,Property Taxes,224
+2024-01-20,Food,320
+2024-01-20,Books,678
+2024-01-20,Groceries,332
+2024-01-22,Restaurants,505
+2024-01-22,Entertainment,809
+2024-01-24,Maintenance,335
+2024-01-25,Phone,519
+2024-01-25,Parking,501
+2024-01-26,Groceries,577
+2024-01-27,Maintenance,389
+2024-01-28,Electricity,164
+2024-01-30,Rent,482
+2024-01-31,Household Supplies,421
+2024-02-01,Internet,838
+2024-02-02,Rent,978
+2024-02-03,Rent,907
+2024-02-03,Car Payments,866
+2024-02-04,Gas,243
+2024-02-04,Restaurants,444
+2024-02-04,Dining Out,388
+2024-02-04,Electricity,186
+2024-02-04,Entertainment,176
+2024-02-05,HOA Fees,766
+2024-02-05,Maintenance,226
+2024-02-07,Transportation,819
+2024-02-08,Beverages,186
+2024-02-08,Entertainment,445
+2024-02-08,Beverages,338
+2024-02-09,Music,892
+2024-02-10,Mortgage,429
+2024-02-11,Rent,923
+2024-02-11,Water,292
+2024-02-13,Food Delivery,445
+2024-02-14,Water,555
+2024-02-15,Cafes,186
+2024-02-16,Hobbies,513
+2024-02-17,Car Payments,816
+2024-02-21,Rent,482
+2024-02-21,Other,486
+2024-02-22,Music,739
+2024-02-22,Groceries,411
+2024-02-22,Car Payments,534
+2024-02-23,Food,276
+2024-02-24,Other,977
+2024-02-24,Music,424
+2024-02-25,HOA Fees,191
+2024-02-25,Music,120
+2024-02-25,Books,194
+2024-02-26,Electricity,739
+2024-02-26,Mortgage,776
+2024-02-27,Travel,479
+2024-02-27,Electricity,579
+2024-02-27,Home Insurance,636
+2024-02-29,Water,536
+2024-02-29,Travel,399
+2024-02-29,Mortgage,757
+2024-03-01,Entertainment,219
+2024-03-02,Rent,545
+2024-03-03,Restaurants,683
+2024-03-03,Food Delivery,447
+2024-03-04,Rent,275
+2024-03-06,Movies,684
+2024-03-06,Internet,417
+2024-03-06,Books,838
+2024-03-07,Rent,358
+2024-03-08,Property Taxes,404
+2024-03-09,Household Supplies,584
+2024-03-09,Phone,947
+2024-03-10,Groceries,727
+2024-03-11,Books,987
+2024-03-11,Car Payments,780
+2024-03-12,TV,978
+2024-03-12,HOA Fees,226
+2024-03-13,Travel,676
+2024-03-13,Food Delivery,182
+2024-03-14,Books,284
+2024-03-16,Car Payments,887
+2024-03-16,Mortgage,954
+2024-03-16,Public Transportation,321
+2024-03-16,Rent,874
+2024-03-17,Household Supplies,860
+2024-03-18,Entertainment,275
+2024-03-18,Entertainment,257
+2024-03-18,Water,674
+2024-03-19,Gas,782
+2024-03-20,Parking,331
+2024-03-21,Car Payments,766
+2024-03-21,Water,149
+2024-03-22,Dining Out,382
+2024-03-24,Phone,658
+2024-03-24,Utilities,970
+2024-03-25,Mortgage,867
+2024-03-26,Public Transportation,568
+2024-03-27,Phone,592
+2024-03-27,Dining Out,991
+2024-03-28,Dining Out,849
+2024-03-30,Travel,878
+2024-03-31,Property Taxes,117
+2024-03-31,Car Payments,829
+2024-04-02,Mortgage,814
+2024-04-02,Books,261
+2024-04-03,Cafes,143
+2024-04-03,Food,866
+2024-04-04,Gas,698
+2024-04-04,Rent,349
+2024-04-06,Household Supplies,366
+2024-04-06,Rent,539
+2024-04-08,Entertainment,505
+2024-04-08,Rent,656
+2024-04-08,HOA Fees,311
+2024-04-08,TV,401
+2024-04-09,HOA Fees,671
+2024-04-09,Gas,478
+2024-04-09,Utilities,414
+2024-04-10,Entertainment,201
+2024-04-12,Home Insurance,181
+2024-04-12,Internet,842
+2024-04-12,Parking,388
+2024-04-12,Car Payments,414
+2024-04-13,Public Transportation,611
+2024-04-14,Maintenance,909
+2024-04-14,Parking,326
+2024-04-17,Movies,727
+2024-04-18,Cafes,377
+2024-04-18,Parking,299
+2024-04-19,Public Transportation,566
+2024-04-20,Entertainment,672
+2024-04-20,Mortgage,424
+2024-04-21,Household Supplies,380
+2024-04-21,Gas,279
+2024-04-22,Transportation,918
+2024-04-23,Internet,176
+2024-04-25,Hobbies,293
+2024-04-25,Water,698
+2024-04-26,Travel,829
+2024-04-27,Rent,133
+2024-04-30,Property Taxes,819
+2024-04-30,Beverages,778
+2024-05-01,Dining Out,544
+2024-05-01,Food,610
+2024-05-02,Rent,170
+2024-05-03,Rent,224
+2024-05-03,Water,423
+2024-05-04,Maintenance,573
+2024-05-04,Travel,806
+2024-05-05,TV,554
+2024-05-05,Property Taxes,279
+2024-05-06,Books,595
+2024-05-06,Water,170
+2024-05-07,Other,160
+2024-05-09,Mortgage,489
+2024-05-10,Entertainment,838
+2024-05-12,Electricity,122
+2024-05-13,TV,262
+2024-05-14,Hobbies,636
+2024-05-14,Books,597
+2024-05-16,Movies,457
+2024-05-16,Internet,737
+2024-05-16,Hobbies,719
+2024-05-17,Maintenance,707
+2024-05-18,Public Transportation,834
+2024-05-18,Food Delivery,538
+2024-05-18,Food,260
+2024-05-19,Groceries,775
+2024-05-20,Public Transportation,453
+2024-05-22,Dining Out,535
+2024-05-22,Hobbies,641
+2024-05-22,HOA Fees,856
+2024-05-22,Utilities,895
+2024-05-23,Rent,370
+2024-05-23,Beverages,595
+2024-05-23,Movies,900
+2024-05-25,Property Taxes,517
+2024-05-25,Rent,898
+2024-05-26,Maintenance,102
+2024-05-26,Water,195
+2024-05-26,Utilities,890
+2024-05-26,Groceries,514
+2024-05-27,Internet,617
+2024-05-27,Other,545
+2024-05-29,Restaurants,297
+2024-05-29,Public Transportation,132
+2024-05-30,Music,823
