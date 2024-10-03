@@ -68,7 +68,7 @@ class SentimentAnalysisTree:
     self.expense_inquiry = expense_inquiry
     self.expense_logging = expense_logging
     self.financial_insights = financial_insights
-    self.built = False  
+    self.built = False
     self.labeldict = {0:'Budget Setting', 1:'Expense Logging', 2:'Budget Inquiry', 3:'Expense Inquiry', 4:'Financial Insights'}
 
   # Fit a decision tree to initialize the classifier, edited at each error instance
@@ -89,11 +89,22 @@ class SentimentAnalysisTree:
     self.PCA = decomp
     #fitting the decision tree
     tree = DecisionTreeClassifier()
-    tree.fit(pca, labels)
+    tree.fit(decomp.transform(scaled_mat), labels)
     self.tree = tree
     return
 
-  # Predict the query category 
+  # In case there was a prediction error, refit the tree with a new set of labelled data
+  def refit_tree(self, query, query_class):
+    class_dict = {'budget inquiry':self.budget_inquiry, 'budget seeting':self.budget_setting, 'expense logging':self.expense_logging, \
+                  'expense inquiry':self.expense_inquiry, 'financial insights':self.financial_insights, 'market insights':None}
+    if class_dict[query_class] is None:
+      print('Currently, we only support standard commands for market insights. Please be on the lookout for future releases!')
+      return
+    class_dict[query_class].append(query)
+    self.fit_tree()
+    return 
+
+  # Predict the query category
   def predict(self, query):
     #if a tree has not been fit, do so
     if not self.built:
