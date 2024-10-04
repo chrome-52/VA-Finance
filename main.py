@@ -7,6 +7,9 @@ import sqlite3
 from budget import set_budget, check_budget
 from expenses import log_expense, get_expense_report
 
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 # Initialize text-to-speech engine
 def speak(text):
     engine = pyttsx3.init()
