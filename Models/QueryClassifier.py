@@ -39,8 +39,8 @@ budget_setting = ['Establish a monthly budget', 'Create a budget plan for the mo
                   'Allocate funds for this month', 'Determine monthly financial limits', 'Set budget', 'Draft a budget for this month', \
                   'Designate a spending plan for the month', "Organize this month's finances"]
 
-expense_logging = ['Record an expense', 'Track an expense', 'log an expense', 'I invested money in', 'I purchased something', 'I made a purchase', \
-                   'I allocated funds', 'I forked out money', 'I paid', 'I incurred an expense']
+expense_logging = ['Record an expense', 'Track an expense', 'log an expense', 'I spent money', 'I purchased something', 'I made a purchase', \
+                   'I just spent money', 'I forked out money', 'I paid', 'I incurred an expense']
 
 budget_inquiry = ['Budget inquiry', "What’s my budget at the moment", 'Can you tell me my current budget status', 'What is my available budget', \
                   'How much is left in my budget currently', "What’s left in my budget", "What does my budget look like right now", 'How more can I spend this month', \
