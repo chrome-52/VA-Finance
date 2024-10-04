@@ -69,7 +69,7 @@ class SentimentAnalysisTree:
     self.expense_logging = expense_logging
     self.financial_insights = financial_insights
     self.built = False
-    self.labeldict = {0:'Budget Setting', 1:'Expense Logging', 2:'Budget Inquiry', 3:'Expense Inquiry', 4:'Financial Insights'}
+    self.labeldict = {0:'set budget', 1:'log expense', 2:'check budget', 3:'view expenses', 4:'financial analysis'}
 
   # Fit a decision tree to initialize the classifier, edited at each error instance
   def fit_tree(self):
