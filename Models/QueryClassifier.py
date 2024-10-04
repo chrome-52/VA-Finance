@@ -7,6 +7,9 @@ from sklearn.decomposition import PCA
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import StandardScaler
 
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 module_url = "https://tfhub.dev/google/universal-sentence-encoder/4"
 model = hub.load(module_url)
 
