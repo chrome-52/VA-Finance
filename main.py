@@ -6,9 +6,8 @@ import yfinance as yf
 import sqlite3
 from budget import set_budget, check_budget
 from expenses import log_expense, get_expense_report
-
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.tree import DecisionTreeClassifier
 
 # Initialize text-to-speech engine
 def speak(text):
@@ -24,7 +23,7 @@ def listen():
         r.adjust_for_ambient_noise(source)
         speak("Listening...")
         audio = r.listen(source)
-        
+
     try:
         command = r.recognize_google(audio)
         print(f"You said: {command}")  # Show what was said
@@ -35,6 +34,33 @@ def listen():
     except sr.RequestError:
         speak("Sorry, my speech service is down.")
         return None
+
+# Classifier for command recognition
+class CommandClassifier:
+    def __init__(self):
+        self.vectorizer = CountVectorizer()
+        self.classifier = DecisionTreeClassifier()
+        self.commands = [
+            ("log expense", ["log expense", "I want to log an expense", "record expense", "I spend some money", "I spent money"]),
+            ("set budget", ["set budget", "I want to set a budget", "budget set"]),
+            ("check budget", ["check budget", "how much budget do I have", "what's my budget"]),
+            ("check exchange rate", ["check exchange rate", "what's the exchange rate"]),
+            ("get stock price", ["get stock price", "check stock price", "stock price"]),
+            ("get cryptocurrency price", ["get cryptocurrency price", "check crypto price"]),
+            ("exit", ["exit", "quit", "close", "stop"])
+        ]
+        self.train_classifier()
+
+    def train_classifier(self):
+        phrases = [phrase for _, variations in self.commands for phrase in variations]
+        labels = [command for command, variations in self.commands for _ in variations]
+        X = self.vectorizer.fit_transform(phrases)
+        self.classifier.fit(X, labels)
+
+    def predict(self, command):
+        X_test = self.vectorizer.transform([command])
+        predicted = self.classifier.predict(X_test)
+        return predicted[0]
 
 # Function to get exchange rate
 def get_exchange_rate(from_currency, to_currency):
@@ -96,36 +122,34 @@ def connect_db():
 
 # Main assistant interaction
 def main():
+    classifier = CommandClassifier()
     speak("Welcome to your personal finance assistant.")
-    speak("You can say the following commands:\n"
-          " Log Expense\n"
-          " Set Budget\n"
-          " Check Budget\n"
-          " Check Exchange Rate\n"
-          " Get Stock Price\n"
-          " Get Cryptocurrency Price\n"
-          " Exit")
+    speak("You can say commands like 'Log Expense', 'Set Budget', 'Check Budget', 'Check Exchange Rate', 'Get Stock Price', 'Get Cryptocurrency Price', or 'Exit'.")
 
     while True:
         command = listen()
         if command is None:
             continue
-        
+
         command = command.lower()
-        
-        # Logging Expense
-        if "log expense" in command:
+        predicted_command = classifier.predict(command)
+
+        # Debugging output
+        print(f"Predicted command: {predicted_command}")  # Show what command was predicted
+
+        # Processing based on the predicted command
+        if predicted_command == "log expense":
             while True:
                 speak("What category? (groceries, transport, utilities, entertainment)")
                 category = listen()
                 if category is None:
                     continue
                 category = category.lower()
-                
+
                 if category not in ['groceries', 'transport', 'utilities', 'entertainment']:
                     speak("Invalid category. Please try again.")
                     continue
-                
+
                 while True:
                     speak("Enter the amount.")
                     amount = listen()
@@ -136,30 +160,29 @@ def main():
                         break
                     except ValueError:
                         speak("Invalid amount. Please try again.")
-                
+
                 speak("Enter the month.")
                 month = listen()
                 if month is None:
                     continue
                 month = month.lower()
-                
+
                 log_expense(category, amount, month)
                 speak(f"Expense of {amount} logged in {category} for {month}.")
                 break
-        
-        # Setting Budget
-        elif "set budget" in command:
+
+        elif predicted_command == "set budget":
             while True:
                 speak("What category? (groceries, transport, utilities, entertainment)")
                 category = listen()
                 if category is None:
                     continue
                 category = category.lower()
-                
+
                 if category not in ['groceries', 'transport', 'utilities', 'entertainment']:
                     speak("Invalid category. Please try again.")
                     continue
-                
+
                 while True:
                     speak("Enter the budget amount.")
                     amount = listen()
@@ -170,36 +193,35 @@ def main():
                         break
                     except ValueError:
                         speak("Invalid amount. Please try again.")
-                
+
                 speak("Enter the month.")
                 month = listen()
                 if month is None:
                     continue
                 month = month.lower()
-                
+
                 set_budget(category, amount, month)
                 speak(f"Budget of {amount} set for {category} in {month}.")
                 break
-        
-        # Checking Budget
-        elif "check budget" in command:
+
+        elif predicted_command == "check budget":
             while True:
                 speak("Which category do you want to check? (groceries, transport, utilities, entertainment)")
                 category = listen()
                 if category is None:
                     continue
                 category = category.lower()
-                
+
                 if category not in ['groceries', 'transport', 'utilities', 'entertainment']:
                     speak("Invalid category. Please try again.")
                     continue
-                
+
                 speak("Enter the month to check.")
                 month = listen()
                 if month is None:
                     continue
                 month = month.lower()
-                
+
                 remaining_budgets = check_budget(month)
                 if category in remaining_budgets:
                     remaining = remaining_budgets[category]
@@ -207,9 +229,8 @@ def main():
                 else:
                     speak(f"No budget found for the category: {category} in {month}.")
                 break
-        
-        # Checking Exchange Rate
-        elif "check exchange rate" in command:
+
+        elif predicted_command == "check exchange rate":
             while True:
                 speak("Which currencies would you like to check? For example, say 'USD to EUR'.")
                 currencies = listen()
@@ -228,26 +249,24 @@ def main():
                 else:
                     speak("Invalid format. Please say currencies in the format 'USD to EUR'.")
                 break
-        
-        # Getting Stock Price
-        elif "get stock price" in command:
+
+        elif predicted_command == "get stock price":
             while True:
                 speak("Which stock symbol would you like to check?")
                 symbol = listen()
                 if symbol is None:
                     continue
-                
+
                 symbol = symbol.upper()
                 price = get_stock_price(symbol)
-                
+
                 if price is not None:
                     speak(f"The current price of {symbol} is {price:.2f}.")
                     break
                 else:
                     speak(f"Sorry, I couldn't retrieve the price for {symbol}. Please try again.")
-        
-        # Getting Cryptocurrency Price
-        elif "get cryptocurrency price" in command:
+
+        elif predicted_command == "get cryptocurrency price":
             while True:
                 speak("Which cryptocurrency would you like to check? For example, say Bitcoin.")
                 symbol = listen()
@@ -260,16 +279,12 @@ def main():
                     break
                 else:
                     speak(f"Sorry, I couldn't retrieve the price for {symbol}. Please try again.")
-        
-        # Exit Command
-        elif "exit" in command:
+
+        elif predicted_command == "exit":
             speak("Thank you for using your personal finance assistant. Goodbye!")
             break
-        
-        # Unrecognized Command
         else:
-            speak("Sorry, I didn't understand that command.")
-
+            speak("Sorry, I didn't understand that command. Can you try again?")
 
 if __name__ == "__main__":
     main()
