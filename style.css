@@ -1,0 +1,126 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #d5ffbc; /* Light green background */
+    color: #333; /* Dark text color */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1100px; /* Container width */
+    margin: auto; /* Center the container */
+    background: white; /* White background for the container */
+    padding: 20px; /* Padding inside the container */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow effect */
+}
+
+h1 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #2c3e50; /* Darker heading color */
+    font-size: 2.5em; /* Larger font size */
+}
+
+button {
+    display: block; /* Block display for buttons */
+    width: 100%; /* Full width buttons */
+    padding: 12px; /* Increased padding */
+    font-size: 18px; /* Font size */
+    background-color: #007BFF; /* Blue background color */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s; /* Smooth transitions */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slightly lift button */
+}
+
+#status {
+    text-align: center; /* Center the status text */
+    font-size: 24px; /* Font size */
+    margin: 20px 0; /* Margin above and below */
+    color: green; /* Green text */
+    font-weight: bold; /* Bold text */
+    animation: bounce 0.6s infinite; /* Bouncing animation */
+}
+
+.hidden {
+    display: none; /* Hide elements */
+}
+
+.output-container {
+    display: flex; /* Flexbox layout for output */
+    justify-content: space-between; /* Space between elements */
+    margin-top: 20px; /* Space above output */
+}
+
+.output {
+    width: 48%; /* Width of output sections */
+    margin-right: 10px; /* Space between sections */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Padding inside output */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for output */
+}
+
+.message {
+    background-color: #e7f3fe; /* Light blue background for messages */
+    border-left: 4px solid #007BFF; /* Blue left border */
+    padding: 10px; /* Padding inside messages */
+    margin-bottom: 10px; /* Space below messages */
+    font-size: 18px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    word-wrap: break-word; /* Break long words */
+}
+
+.user-command {
+    margin-top: 10px; /* Space above user command */
+    padding: 10px; /* Padding inside user command */
+    border: 1px solid #ccc; /* Light border */
+    background-color: #e9f7ef; /* Light green background */
+    max-height: 200px; /* Max height */
+    overflow-y: auto; /* Scroll if too long */
+    border-radius: 5px; /* Rounded corners */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .output-container {
+        flex-direction: column; /* Stack outputs on small screens */
+    }
+
+    .output {
+        width: 100%; /* Full width for small screens */
+        margin-right: 0; /* No right margin */
+        margin-bottom: 10px; /* Space below each output */
+    }
+}
+
+.animated-icon {
+    animation: fade 4s infinite;
+    margin-right: 30px; /* Space between icon and text */
+    font-size: 1.5em; /* Size of the icon */
+    color: #5baaff; /* Color of the icon */
+}
+
+@keyframes fade {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+

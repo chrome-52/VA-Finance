@@ -7,6 +7,9 @@ from sklearn.decomposition import PCA
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import StandardScaler
 
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 module_url = "https://tfhub.dev/google/universal-sentence-encoder/4"
 model = hub.load(module_url)
 
@@ -39,8 +42,8 @@ budget_setting = ['Establish a monthly budget', 'Create a budget plan for the mo
                   'Allocate funds for this month', 'Determine monthly financial limits', 'Set budget', 'Draft a budget for this month', \
                   'Designate a spending plan for the month', "Organize this month's finances"]
 
-expense_logging = ['Record an expense', 'Track an expense', 'log an expense', 'I invested money in', 'I purchased something', 'I made a purchase', \
-                   'I allocated funds', 'I forked out money', 'I paid', 'I incurred an expense']
+expense_logging = ['Record an expense', 'Track an expense', 'log an expense', 'I spent money', 'I purchased something', 'I made a purchase', \
+                   'I just spent money', 'I forked out money', 'I paid', 'I incurred an expense']
 
 budget_inquiry = ['Budget inquiry', "What’s my budget at the moment", 'Can you tell me my current budget status', 'What is my available budget', \
                   'How much is left in my budget currently', "What’s left in my budget", "What does my budget look like right now", 'How more can I spend this month', \
@@ -68,8 +71,8 @@ class SentimentAnalysisTree:
     self.expense_inquiry = expense_inquiry
     self.expense_logging = expense_logging
     self.financial_insights = financial_insights
-    self.built = False  
-    self.labeldict = {0:'Budget Setting', 1:'Expense Logging', 2:'Budget Inquiry', 3:'Expense Inquiry', 4:'Financial Insights'}
+    self.built = False
+    self.labeldict = {0:'set budget', 1:'log expense', 2:'check budget', 3:'view expenses', 4:'financial analysis'}
 
   # Fit a decision tree to initialize the classifier, edited at each error instance
   def fit_tree(self):
@@ -89,11 +92,22 @@ class SentimentAnalysisTree:
     self.PCA = decomp
     #fitting the decision tree
     tree = DecisionTreeClassifier()
-    tree.fit(pca, labels)
+    tree.fit(decomp.transform(scaled_mat), labels)
     self.tree = tree
     return
 
-  # Predict the query category 
+  # In case there was a prediction error, refit the tree with a new set of labelled data
+  def refit_tree(self, query, query_class):
+    class_dict = {'budget inquiry':self.budget_inquiry, 'budget seeting':self.budget_setting, 'expense logging':self.expense_logging, \
+                  'expense inquiry':self.expense_inquiry, 'financial insights':self.financial_insights, 'market insights':None}
+    if class_dict[query_class] is None:
+      print('Currently, we only support standard commands for market insights. Please be on the lookout for future releases!')
+      return
+    class_dict[query_class].append(query)
+    self.fit_tree()
+    return 
+
+  # Predict the query category
   def predict(self, query):
     #if a tree has not been fit, do so
     if not self.built:
