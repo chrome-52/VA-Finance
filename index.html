@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Finance Assistant</title>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-robot animated-icon"></i>Personal Finance Assistant</h1> <!-- Added icon here -->
+        <button id="startButton">Start Listening</button>
+        <div class="output-container">
+            <div id="output" class="output"></div> <!-- The assistant's responses will be displayed here -->
+            <div id="userCommands" class="output"></div> <!-- User commands will be displayed here -->
+        </div>
+        
+        <div id="status" class="hidden">Listening...</div> <!-- Moved below output container -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script>
+        const socket = io();
+
+        $(document).ready(function () {
+            $('#startButton').click(function () {
+                $('#output').empty(); // Clear previous responses
+                $('#userCommands').empty(); // Clear previous user commands
+                socket.emit('voice_command', 'start listening'); // Emit the start listening command
+            });
+
+            socket.on('listening', function (data) {
+                if (data.status === 'start') {
+                    $('#status').removeClass('hidden'); // Show listening status
+                } else {
+                    $('#status').addClass('hidden'); // Hide listening status
+                }
+            });
+
+            socket.on('response', function (data) {
+                displayMessagesSequentially(data.message); // Display messages one at a time
+            });
+
+            socket.on('user_command', function (data) {
+                displayUserCommand(data.command); // Display user command
+            });
+        });
+
+        // Function to display messages in one column in a sequential manner
+        function displayMessagesSequentially(messages) {
+            const messageArray = messages.split('\n'); // Split by new lines
+            let index = 0;
+
+            function showNextMessage() {
+                if (index < messageArray.length) {
+                    $('#output').append('<div class="message">' + messageArray[index] + '</div>'); // Append each message in a single div
+                    index++;
+                    setTimeout(showNextMessage, 1500); // Show next message after 1.5 seconds
+                }
+            }
+
+            showNextMessage(); // Start displaying messages
+        }
+
+        // Function to display user commands without prefix
+        function displayUserCommand(command) {
+            $('#userCommands').append('<div class="user-command">' + command + '</div>'); // Append user command without prefix
+        }
+    </script>
+</body>
+</html>
